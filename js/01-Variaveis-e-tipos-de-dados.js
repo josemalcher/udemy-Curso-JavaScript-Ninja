@@ -8,7 +8,7 @@ console.log(x); // 0
 x = 1;
 console.log(x); // 1
 
-x = 1.2
+x = 1.2;
 console.log(x); // 1.2
 
 var nomeQualquer = 10;

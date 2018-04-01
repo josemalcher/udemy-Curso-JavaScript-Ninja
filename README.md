@@ -21,7 +21,7 @@ console.log(x); // 0
 x = 1;
 console.log(x); // 1
 
-x = 1.2
+x = 1.2;
 console.log(x); // 1.2
 
 var nomeQualquer = 10;
@@ -72,9 +72,6 @@ console.log(numeros[2]); // 3
 // anotações de arrays em objetos
 console.log(pessoa['altura']); // 1.6
 console.log(pessoa.altura); // 1.6
-
-
-
 ```
 
 ---
