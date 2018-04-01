@@ -204,7 +204,7 @@ console.log(somaParametro(50,5)); // 55
 
 
 ---
-### 05 - Operadores Lógicos
+### 07 - Operadores Lógicos
 ```javascript
 /* -- Operadores Lógicos -- */
 
@@ -228,7 +228,7 @@ console.log(x === 3 ); // true
 
 
 ---
-### Operadores Unários
+### 08 - Operadores Unários
 
 ---
 ### Estrutura Léxica
