@@ -880,85 +880,104 @@ console.log(mostraOutraFUncao(function () { // Retorno com função anônima
 ```
 
 ---
-### Escopo de funções
+### 50 - Escopo de funções
+
+```js
+/* -- 50 - Escopo de funções -- */
+
+function myfunction() {
+    var num1 = 1;
+    function soma() {
+        return num1 + num2;
+    }
+    var num2 = 2;
+    return soma();
+}
+
+console.log(myfunction()); // 3
+//console.log(soma()); // ReferenceError: soma is not defined
+
+
+```
+
 
 ---
-### Hoisting
+### 51 - Hoisting
 
 ---
-### IIFE - Immediately Invoked Function Expression
+### 52 - IIFE - Immediately Invoked Function Expression
 
 ---
-### Wrapper Objects
+### 57 - Wrapper Objects
 
 ---
-### typeof
+### 58 - typeof
 
 ---
-### Laços (Loops)
+### 63 - Laços (Loops)
 
 ---
-### Saltos
+### 64 - Saltos
 
 ---
-### Criação de objetos
+### 68 - Criação de objetos
 
 ---
-### Criação de objetos - Object.create
+### 69 - Criação de objetos - Object.create
 
 ---
-### Métodos de objeto
+### 70 - Métodos de objeto
 
 ---
-### Array - Métodos
+### 71 - Array - Métodos
 
 ---
-### Array - toString, concat, unshift, shift
+### 74 - Array - toString, concat, unshift, shift
 
 ---
-### slice e splice
+### 75 - slice e splice
 
 ---
-### forEach, every, some
+### 76 - forEach, every, some
 
 ---
-### map, filter
+### 77 - map, filter
 
 ---
-### reduce() e reduceRight()
+### 81 - reduce() e reduceRight()
 
 ---
-### indexOf(), lastIndexOf() e isArray()
+### 82 - indexOf(), lastIndexOf() e isArray()
 
 ---
-### JS no browser
+### 87 - JS no browser
 
 ---
-### this
+### 88 - this
 
 ---
-### Objeto arguments
+### 89 - Objeto arguments
 
 ---
-### use strict - Criação de variáveis sem o "var"
+### 91 - use strict - Criação de variáveis sem o "var"
 
 ---
-### use strict - Uso do width e global this === undefined
+### 92 - use strict - Uso do width e global this === undefined
 
 ---
-### O operador delete, objetos e funções
+### 93 - O operador delete, objetos e funções
 
 ---
-### Objeto String
+### 94 - Objeto String
 
 ---
-### Regex
+### 99 - Regex
 
 ---
-### Regex - Negação
+### 106 - Regex - Negação
 
 ---
-### Regex - Repetidores
+### 107 - Regex - Repetidores
 
 ---
 ### Conhecendo outros símbolos usados na Regex
