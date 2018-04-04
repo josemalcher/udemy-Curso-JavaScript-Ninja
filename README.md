@@ -936,6 +936,17 @@ console.log(variaveisHoisting()); // undefined (função não tem retorno)
 ---
 ### 52 - IIFE - Immediately Invoked Function Expression
 
+```js
+/* -- 52 - IIFE - Immediately Invoked Function Expression -- */
+
+// Função auto-executável
+(function () {
+    console.log(30 + 10); // 40
+})();
+
+
+```
+
 ---
 ### 57 - Wrapper Objects
 
