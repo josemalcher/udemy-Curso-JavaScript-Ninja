@@ -1541,6 +1541,29 @@ console.log(Array.isArray([])); // true
 ```
 ---
 ### 87 - JS no browser
+```html
+<!doctype html>
+<html lang="pt_br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Curso Javascript Ninja</title>
+</head>
+<body>
+
+
+<script src="js/82-indexOf-lastIndexOf-e-isArray.js"></script>
+</body>
+</html>
+```
+```js
+(function(){
+	var name = 'Teste name';
+	console.log(name);
+})();
+```
 
 ---
 ### 88 - this
