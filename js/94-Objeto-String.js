@@ -36,6 +36,17 @@ console.log(jose.split(' ')); // (2) ["José", "Malcher"]  // quebra de acordo 
 // junta
 console.log(jose.split(' ').join('-')); // José-Malcher
 
+/* -- PARTE 2 -- */
 
+/* substring */ //pega do final par ao início
+console.log(jose.substring(2)); // sé Malcher
+console.log(jose.substring(2,7)); // sé Ma
 
+/* toLowerCase e toUpperCase*/
 
+console.log(jose.toLowerCase()); // josé malcher
+console.log(jose.toUpperCase()); // JOSÉ MALCHER
+
+josebaixa = 'jose malcher';
+var nomeOK = josebaixa.charAt(0).toUpperCase() + josebaixa.slice(1); // J + ose malcher
+console.log(nomeOK); // Jose malcher
