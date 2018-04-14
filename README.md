@@ -1988,46 +1988,86 @@ http://qualquersite.com.br.xyz
 ```
 
 ---
-### Conhecendo outros símbolos usados na Regex
+### 111 - Conhecendo outros símbolos usados na Regex
+```js
+/* -- 111 - Conhecendo outros símbolos usados na Regex -- */
+
+var texto = "<h2>Lorem 123456789 ipsum fusce de nostra Senectus</h2> pellentesque 2018 - etiam quam, Fringilla de platea sed turpis de arcu congue vivamus 1984 e 2018.";
+
+// inicio de String ^ (representa o inicio)
+console.log(texto.match(/^</g)); // ["<"]
+
+//represetnta o fim da string $
+console.log(texto.match(/\.$/g)); // ["."]
+
+console.log(texto.match(/^<.+\.$/g)); // ["<h2>Lorem 123456789 ipsum fusce de nostra Senectus…ea sed turpis de arcu congue vivamus 1984 e 2018."]
+
+console.log(texto.match(/(^<).+(\.$)/g)); // ["<h2>Lorem 123456789 ipsum fusce de nostra Senectus…ea sed turpis de arcu congue vivamus 1984 e 2018."]
+
+// Flag m multiline
+console.log(texto.match(/t/gim)); // (6) ["t", "t", "t", "t", "t", "t"]
+
+console.log(texto.match(/(^<).+(>$)/gm)); // exemplo de paragrafos em html <p>texto</p>
+// m -> pega(match) com os dados que estão em linhas como tags html!
+
+var texto2 = "<h2>Lorem 123456789 ipsum fusce de nostra Senectus</h2> <p>pellentesque 2018 - etiam quam, Fringilla de</p>";
+// ? Repetição não gulosa( se usado apos repetidores)
+
+console.log(texto2.match(/(<\w+>).+?(<\/\w+>)/g));
+//(2) ["<h2>Lorem 123456789 ipsum fusce de nostra Senectus</h2>", "<p>pellentesque 2018 - etiam quam, Fringilla de</p>"]
+
+// Somente agrupamento, sem capturar (?:)
+var texto3 = "julho e junho";
+console.log(texto3.match(/ju(?:n|1)ho/g)); // ["junho"]
+
+
+// Referencia dentro de regex \1, \2
+console.log(texto2.match(/<(\w+)>.+<\/(\1)>/g)); // (2) ["<h2>Lorem 123456789 ipsum fusce de nostra Senectus</h2>", "<p>pellentesque 2018 - etiam quam, Fringilla de</p>"]
+
+
+
+
+```
+
 
 ---
-### Métodos de string onde podemos usar regex
+### 112 - Métodos de string onde podemos usar regex
 
 ---
-### o objeto RegExp()
+### 113 - o objeto RegExp()
 
 ---
-### Js no browser - Selecionar elementos no DOM
+### 116 - Js no browser - Selecionar elementos no DOM
 
 ---
-### Js no browser - Formulário e eventos
+### 119 Js no browser - Formulário e eventos
 
 ---
-### Sync vs async
+### 123 - Sync vs async
 
 ---
-### setTimeout
+### 124 - setTimeout
 
 ---
-### setTimeout vs setInterval
+### 125 - setTimeout vs setInterval
 
 ---
-### Propriedades e métodos de funções
+### 128 - Propriedades e métodos de funções
 
 ---
-### Prototype
+### 130 - Prototype
 
 ---
-### Array-like e editorconfig
+### 131 - Array-like e editorconfig
 
 ---
-### Debug
+### 135 - Debug
 
 ---
-### Modularização de código
+### 139 -  Modularização de código
 
 ---
-### Javascript inline
+### 147 - Javascript inline
 
 ---
 ### Eventos inline
