@@ -2024,14 +2024,31 @@ console.log(texto3.match(/ju(?:n|1)ho/g)); // ["junho"]
 // Referencia dentro de regex \1, \2
 console.log(texto2.match(/<(\w+)>.+<\/(\1)>/g)); // (2) ["<h2>Lorem 123456789 ipsum fusce de nostra Senectus</h2>", "<p>pellentesque 2018 - etiam quam, Fringilla de</p>"]
 
-
-
-
 ```
 
 
 ---
 ### 112 - Métodos de string onde podemos usar regex
+```js
+/* -- 112 - Métodos de string onde podemos usar regex -- */
+
+console.log('josemalcher'.match(/a/g)); // ["a"]
+
+// .replac (regexp, string)
+// .split
+var cpf = '111.222.333-44';
+console.log(cpf.split('.')); // (3) ["111", "222", "333-44"]
+console.log(cpf.split(/\D/g)); // (4) ["111", "222", "333", "44"]
+
+//.search
+console.log(cpf.search(/\./)); // 3
+
+
+
+
+
+```
+
 
 ---
 ### 113 - o objeto RegExp()
