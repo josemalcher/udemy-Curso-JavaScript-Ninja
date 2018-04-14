@@ -2043,15 +2043,24 @@ console.log(cpf.split(/\D/g)); // (4) ["111", "222", "333", "44"]
 //.search
 console.log(cpf.search(/\./)); // 3
 
-
-
-
-
 ```
 
 
 ---
 ### 113 - o objeto RegExp()
+
+```js
+/* -- 113 - o objeto RegExp() -- */
+
+// contrutor
+var regex = new RegExp('jose');
+console.log(regex); // /jose/
+
+regex = new RegExp('\\.'); // para fazer escape do regex
+
+// metodo .test()
+// metodo .exec()
+```
 
 ---
 ### 116 - Js no browser - Selecionar elementos no DOM
