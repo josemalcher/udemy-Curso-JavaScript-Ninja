@@ -2110,11 +2110,41 @@ regex = new RegExp('\\.'); // para fazer escape do regex
     console.log(doc.getElementsByTagName('a')); // HTMLCollection(3) [a.my-link, a.my-link, a.my-link]
 
 
+/* -- 118 - Js no browser Parte 3 - Selecionar elementos no DOM -- */
+
+
+
+    /* -- 118 - Js no browser Parte 3 - Selecionar elementos no DOM -- */
+
+    //var $input = doc.getElementsByName('username');  // [input]
+
+    var $inputs = doc.getElementsByTagName('input');
+    //  HTMLCollection(2) [input#username, input, username: input#username, passwird: input]
+    console.log($inputs);
+    console.log($inputs.length); // 2
+
+    // Seleção estaticos
+    // querySelector() - pega o primeiro que encontrar
+    // querySelectorAll() - pega todas as tags
+
+    //$inputs.document.querySelectorAll('input'); // sempre eles para selecionar elementos!
+    $inputs = document.querySelectorAll('[type="text"]'); // NodeList(2) [input#username, input#username2]
+    console.log($inputs);
+
+    //pegar pela class
+    var $inputss = document.querySelectorAll('.input');
+    console.log($inputss); // NodeList(2) [input#username.input, input#username2.input]
+    var $inputss = document.querySelectorAll('#username');
+    console.log($inputss); // NodeList [input#username.input]
+
+
 })(window, document);
 
-```
 
-#### 117 - Js no browser Parte 2 - Selecionar elementos no DOM
+
+
+
+```
 
 ---
 ### 119 Js no browser - Formulário e eventos
