@@ -2336,7 +2336,22 @@ regex = new RegExp('\\.'); // para fazer escape do regex
 
 })();
 
+```
 
+### 128 - Propriedades e métodos de funções - Parte 2
+
+```js
+// 128 - Propriedades e métodos de funções - Parte 2
+
+    function funcaoCao2(a, b, c) {
+        console.log(this.lastname,a,b,c);
+    }
+    var obj3 = {lastname:'Malcher jr'};
+    funcaoCao2.call(obj3,'a','b','c'); // Malcher jr a b c
+    funcaoCao2.call(funcaoCao2,'a','b','c'); // undefined "a" "b" "c"
+
+    var arg = [1, 2, 3]; // passar de forma dinâmica .apply()
+    funcaoCao2.apply(funcaoCao2,arg); // undefined 1 2 3
 
 ```
 
