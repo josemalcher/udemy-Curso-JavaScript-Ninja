@@ -2417,6 +2417,8 @@ regex = new RegExp('\\.'); // para fazer escape do regex
 ---
 ### 135 - Debug
 
+- https://developers.google.com/web/tools/chrome-devtools/?hl=pt-br
+
 ---
 ### 139 -  Modularização de código
 
