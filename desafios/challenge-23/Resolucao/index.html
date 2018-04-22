@@ -37,6 +37,7 @@
         var $buttonNumbers = doc.querySelectorAll('[data-js="button-number"]');
         var $buttonCE = doc.querySelector('[data-js="button-ce"]');
         var $buttonOperation = doc.querySelectorAll('[data-js="button-operation"]');
+        var $buttonEqual = doc.querySelector('[data-js="button-equal"]');
 
         /*$buttonNumbers.forEach(function (button) {
             console.log(button);
@@ -55,11 +56,23 @@
         });
 
         function handleClickOperation() {
+            removeLastItemIfItIsAnOperator();
+            $visor.value += this.value;
+        }
+        function isLastItemAnOperation(){
             var operations = ['+', '-', 'x', '/'];
-            if(isLastItemAnOperation(operations)){
+            var lastItem = $visor.value.split('').pop();
+            return operations.some(function (operator) {
+                return operator === lastItem;
+            });
+
+        }
+
+        /* Remove o ultimo item se ele for um operador */
+        function removeLastItemIfItIsAnOperator(){
+            if(isLastItemAnOperation()){
                 $visor.value = $visor.value.slice(0, -1);
             }
-            $visor.value += this.value;
         }
 
 
@@ -68,6 +81,12 @@
 
         function handleClickCE() {
             $visor.value = 0;
+        }
+
+        /* operadores */
+        $buttonEqual.addEventListener('click', handleClickEqual, false);
+        function handleClickEqual() {
+            removeLastItemIfItIsAnOperator();
         }
 
 
