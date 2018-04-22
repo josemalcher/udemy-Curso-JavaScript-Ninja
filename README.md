@@ -2422,6 +2422,10 @@ regex = new RegExp('\\.'); // para fazer escape do regex
 ---
 ### 139 -  Modularização de código
 
+Desafio 23 - Calculadora
+
+
+
 ---
 ### 147 - Javascript inline
 
