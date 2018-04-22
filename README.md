@@ -2424,7 +2424,120 @@ regex = new RegExp('\\.'); // para fazer escape do regex
 
 Desafio 23 - Calculadora
 
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Desafio 23 - Calculadora</title>
+</head>
+<body>
+<input type="text" readonly value="0" data-js="visor">
+<div class="buttons-numbers">
+    <button data-js="button-number" value="0">0</button>
+    <button data-js="button-number" value="1">1</button>
+    <button data-js="button-number" value="2">2</button>
+    <button data-js="button-number" value="3">3</button>
+    <button data-js="button-number" value="4">4</button>
+    <button data-js="button-number" value="5">5</button>
+    <button data-js="button-number" value="6">6</button>
+    <button data-js="button-number" value="7">7</button>
+    <button data-js="button-number" value="8">8</button>
+    <button data-js="button-number" value="9">9</button>
+</div>
+<div class="operations">
+    <button data-js="button-operation" value="+">+</button>
+    <button data-js="button-operation" value="-">-</button>
+    <button data-js="button-operation" value="x">x</button>
+    <button data-js="button-operation" value="÷">÷</button>
+    <button data-js="button-equal" value="="> =</button>
+    <button data-js="button-ce" value="ce"> CE</button>
 
+</div>
+<script>
+    (function (win, doc) {
+        'use strict';
+
+        var $visor = document.querySelector('[data-js="visor"]');
+        var $buttonNumbers = doc.querySelectorAll('[data-js="button-number"]');
+        var $buttonCE = doc.querySelector('[data-js="button-ce"]');
+        var $buttonOperation = doc.querySelectorAll('[data-js="button-operation"]');
+        var $buttonEqual = doc.querySelector('[data-js="button-equal"]');
+
+        /*$buttonNumbers.forEach(function (button) {
+            console.log(button);
+        })*/
+        Array.prototype.forEach.call($buttonNumbers, function (button) {
+            button.addEventListener('click', handleClickNumber, false);
+        });
+
+        function handleClickNumber() {
+            $visor.value += this.value;
+        }
+
+        /* Operações */
+        Array.prototype.forEach.call($buttonOperation, function (button) {
+            button.addEventListener('click', handleClickOperation, false);
+        });
+
+        function handleClickOperation() {
+            $visor.value = removeLastItemIfItIsAnOperator($visor.value);
+            $visor.value += this.value;
+        }
+
+        function isLastItemAnOperation(number) {
+            var operations = ['+', '-', 'x', '÷'];
+            var lastItem = number.split('').pop();
+            return operations.some(function (operator) {
+                return operator === lastItem;
+            });
+
+        }
+
+        /* Remove o ultimo item se ele for um operador */
+        function removeLastItemIfItIsAnOperator(number) {
+            if (isLastItemAnOperation(number)) {
+                return number.slice(0, -1);
+            }
+            return number;
+        }
+
+        /* button CE */
+        $buttonCE.addEventListener('click', handleClickCE, false);
+
+        function handleClickCE() {
+            $visor.value = 0;
+        }
+
+        /* operadores */
+        $buttonEqual.addEventListener('click', handleClickEqual, false);
+
+        function handleClickEqual() {
+            $visor.value = removeLastItemIfItIsAnOperator($visor.value);
+            var allValues = $visor.value.match(/\d+[+x÷-]?/g);
+            $visor.value = allValues.reduce(function (accumulated, actual) {
+                var firstValue = accumulated.slice(0, -1);
+                var operator = accumulated.split('').pop();
+                var lastValue = removeLastItemIfItIsAnOperator(actual);
+                var lastOperator = isLastItemAnOperation(actual) ? actual.split('').pop() : '';
+                switch (operator) {
+                    case '+':
+                        return (Number(firstValue) + Number(lastValue)) + lastOperator;
+                    case '-':
+                        return (Number(firstValue) - Number(lastValue)) + lastOperator;
+                    case 'x':
+                        return (Number(firstValue) * Number(lastValue)) + lastOperator;
+                    case '÷':
+                        return (Number(firstValue) / Number(lastValue)) + lastOperator;
+                }
+            });
+        }
+    })(window, document)
+</script>
+</body>
+</html>
+
+```
 
 ---
 ### 147 - Javascript inline
