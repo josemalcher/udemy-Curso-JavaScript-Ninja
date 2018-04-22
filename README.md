@@ -2542,6 +2542,47 @@ Desafio 23 - Calculadora
 ---
 ### 147 - Javascript inline
 
+```js
+/* 147 - Javascript inline */
+
+// <a href="javascript:bom()"> Bom </a>
+
+// Eventos - https://developer.mozilla.org/en-US/docs/Web/Events
+
+```
+
+```html
+<!doctype html>
+<html lang="pt_br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Curso Javascript Ninja</title>
+</head>
+<body>
+
+<!--<a href="javascript:" onclick="boom();">BOM!</a>-->
+<a href="http://josemalcher.net">BOM!</a>
+
+<script>
+/*function boom() {
+    alert('boom!');
+}*/
+var $a = document.querySelector('a');
+$a.addEventListener('click', boom, false);
+function boom(event) {
+    event.preventDefault();
+    alert('boom!');
+}
+
+
+</script>
+</body>
+</html>
+```
+
 ---
 ### Eventos inline
 

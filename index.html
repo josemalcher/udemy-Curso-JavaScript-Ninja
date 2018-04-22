@@ -8,14 +8,22 @@
     <title>Curso Javascript Ninja</title>
 </head>
 <body>
-<!--<form action="/" method="get">-->
-    <!--<input type="text" name="username" id="username" class="input" value="josemalcher">-->
-    <!--<input type="password" name="password" id="password" class="input" value="123456">-->
 
-    <!--<button type="submit" id="button">ENviar</button>-->
-<!--</form>-->
-<!--<button data-js="button">Parar cronômetro!</button>-->
+<!--<a href="javascript:" onclick="boom();">BOM!</a>-->
+<a href="http://josemalcher.net">BOM!</a>
 
-<script src="js/131-Array-like-e-editorconfig.js"></script>
+<script>
+/*function boom() {
+    alert('boom!');
+}*/
+var $a = document.querySelector('a');
+$a.addEventListener('click', boom, false);
+function boom(event) {
+    event.preventDefault();
+    alert('boom!');
+}
+
+
+</script>
 </body>
 </html>
