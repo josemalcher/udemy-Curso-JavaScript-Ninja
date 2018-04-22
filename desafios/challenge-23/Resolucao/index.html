@@ -7,26 +7,47 @@
 <body>
 <input type="text" readonly value="0" data-js="visor">
 <div class="buttons-numbers">
-    <button data-js="button-number" data-id="button-number0">0</button>
-    <button data-js="button-number" data-id="button-number1">1</button>
-    <button data-js="button-number" data-id="button-number2">2</button>
-    <button data-js="button-number" data-id="button-number3">3</button>
-    <button data-js="button-number" data-id="button-number4">4</button>
-    <button data-js="button-number" data-id="button-number5">5</button>
-    <button data-js="button-number" data-id="button-number6">6</button>
-    <button data-js="button-number" data-id="button-number7">7</button>
-    <button data-js="button-number" data-id="button-number8">8</button>
-    <button data-js="button-number" data-id="button-number9">9</button>
+    <button data-js="button-number" value="0">0</button>
+    <button data-js="button-number" value="1">1</button>
+    <button data-js="button-number" value="2">2</button>
+    <button data-js="button-number" value="3">3</button>
+    <button data-js="button-number" value="4">4</button>
+    <button data-js="button-number" value="5">5</button>
+    <button data-js="button-number" value="6">6</button>
+    <button data-js="button-number" value="7">7</button>
+    <button data-js="button-number" value="8">8</button>
+    <button data-js="button-number" value="9">9</button>
+
 
 </div>
 <div class="operations">
-    <button data-js="button-operation" data-id="button-operation-plus">+</button>
-    <button data-js="button-operation" data-id="button-operation-minus">-</button>
-    <button data-js="button-operation" data-id="button-operation-mult">x</button>
-    <button data-js="button-operation" data-id="button-operation-div">/</button>
-    <button data-js="button-operation" data-id="button-operation-equal"> = </button>
-    <button data-js="button-operation" data-id="button-operation-ce"> CE </button>
+    <button data-js="button-operation" data-id="button-operation-plus" value="+">+</button>
+    <button data-js="button-operation" data-id="button-operation-minus" value="-">-</button>
+    <button data-js="button-operation" data-id="button-operation-mult" value="x">x</button>
+    <button data-js="button-operation" data-id="button-operation-div" value="/">/</button>
+    <button data-js="button-operation" data-id="button-operation-equal" value="="> = </button>
+    <button data-js="button-operation" data-id="button-operation-ce" value="ce"> CE </button>
 
 </div>
+<script>
+    (function (win,doc) {
+        'use strict';
+
+        var $visor = document.querySelector('[data-js="visor"]');
+        var $buttonNumbers = doc.querySelectorAll('[data-js="button-number"]');
+
+        /*$buttonNumbers.forEach(function (button) {
+            console.log(button);
+        })*/
+        Array.prototype.forEach.call($buttonNumbers, function (button) {
+            button.addEventListener('click', handleClickNumber, false);
+        });
+        function handleClickNumber(event) {
+            $visor.value += this.value;
+        }
+
+
+    })(window, document)
+</script>
 </body>
 </html>
