@@ -24,7 +24,7 @@
     <button data-js="button-operation" value="+">+</button>
     <button data-js="button-operation" value="-">-</button>
     <button data-js="button-operation" value="x">x</button>
-    <button data-js="button-operation" value="/">/</button>
+    <button data-js="button-operation" value="÷">÷</button>
     <button data-js="button-equal" value="="> =</button>
     <button data-js="button-ce" value="ce"> CE</button>
 
@@ -59,8 +59,9 @@
             removeLastItemIfItIsAnOperator();
             $visor.value += this.value;
         }
-        function isLastItemAnOperation(){
-            var operations = ['+', '-', 'x', '/'];
+
+        function isLastItemAnOperation() {
+            var operations = ['+', '-', 'x', '÷'];
             var lastItem = $visor.value.split('').pop();
             return operations.some(function (operator) {
                 return operator === lastItem;
@@ -69,8 +70,8 @@
         }
 
         /* Remove o ultimo item se ele for um operador */
-        function removeLastItemIfItIsAnOperator(){
-            if(isLastItemAnOperation()){
+        function removeLastItemIfItIsAnOperator() {
+            if (isLastItemAnOperation()) {
                 $visor.value = $visor.value.slice(0, -1);
             }
         }
@@ -85,8 +86,15 @@
 
         /* operadores */
         $buttonEqual.addEventListener('click', handleClickEqual, false);
+
         function handleClickEqual() {
             removeLastItemIfItIsAnOperator();
+            var allValues = $visor.value.match(/\d+[+x÷-]?/g);
+            var result = allValues.reduce(function (accumulated, actual) {
+                return accumulated + actual;
+            });
+            console.log(result);
+
         }
 
 
