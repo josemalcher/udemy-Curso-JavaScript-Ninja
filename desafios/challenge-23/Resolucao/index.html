@@ -21,20 +21,22 @@
 
 </div>
 <div class="operations">
-    <button data-js="button-operation" data-id="button-operation-plus" value="+">+</button>
-    <button data-js="button-operation" data-id="button-operation-minus" value="-">-</button>
-    <button data-js="button-operation" data-id="button-operation-mult" value="x">x</button>
-    <button data-js="button-operation" data-id="button-operation-div" value="/">/</button>
-    <button data-js="button-operation" data-id="button-operation-equal" value="="> = </button>
-    <button data-js="button-operation" data-id="button-operation-ce" value="ce"> CE </button>
+    <button data-js="button-operation" value="+">+</button>
+    <button data-js="button-operation" value="-">-</button>
+    <button data-js="button-operation" value="x">x</button>
+    <button data-js="button-operation" value="/">/</button>
+    <button data-js="button-equal" value="="> =</button>
+    <button data-js="button-ce" value="ce"> CE</button>
 
 </div>
 <script>
-    (function (win,doc) {
+    (function (win, doc) {
         'use strict';
 
         var $visor = document.querySelector('[data-js="visor"]');
         var $buttonNumbers = doc.querySelectorAll('[data-js="button-number"]');
+        var $buttonCE = doc.querySelector('[data-js="button-ce"]');
+        var $buttonOperation = doc.querySelectorAll('[data-js="button-operation"]');
 
         /*$buttonNumbers.forEach(function (button) {
             console.log(button);
@@ -42,8 +44,30 @@
         Array.prototype.forEach.call($buttonNumbers, function (button) {
             button.addEventListener('click', handleClickNumber, false);
         });
-        function handleClickNumber(event) {
+
+        function handleClickNumber() {
             $visor.value += this.value;
+        }
+
+        /* Operações */
+        Array.prototype.forEach.call($buttonOperation, function (button) {
+            button.addEventListener('click', handleClickOperation, false);
+        });
+
+        function handleClickOperation() {
+            var operations = ['+', '-', 'x', '/'];
+            if(isLastItemAnOperation(operations)){
+                $visor.value = $visor.value.slice(0, -1);
+            }
+            $visor.value += this.value;
+        }
+
+
+        /* button CE */
+        $buttonCE.addEventListener('click', handleClickCE, false);
+
+        function handleClickCE() {
+            $visor.value = 0;
         }
 
 
