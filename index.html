@@ -9,20 +9,12 @@
 </head>
 <body>
 
-<!--<a href="javascript:" onclick="boom();">BOM!</a>-->
-<a href="http://josemalcher.net">BOM!</a>
+<div data-js="div">
+    <a href="#" data-js="link">LINK <span data-js="span">SPAN</span></a>
+</div>
 
+<script src="js/148-Eventos.js"></script>
 <script>
-/*function boom() {
-    alert('boom!');
-}*/
-var $a = document.querySelector('a');
-$a.addEventListener('click', boom, false);
-function boom(event) {
-    event.preventDefault();
-    alert('boom!');
-}
-
 
 </script>
 </body>
