@@ -2709,15 +2709,73 @@ function boom(event) {
 
 ```
 
-
 ---
-### Remover eventos
+### 150 - DOM
 
----
-### Eventos como métodos
+```html
+<!doctype html>
+<html lang="pt_br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Curso Javascript Ninja</title>
+</head>
+<body>
 
----
-### DOM
+<div class="main">
+    <header class="main-header">
+        <h1 class="main-header__title">Titulo da página</h1>
+    </header>
+    <section class="main-content">
+        Texto 1
+        <div class="entry">
+            <p>
+                Lorem Ipsum...
+            </p>
+        </div>
+        texto 2
+    </section>
+    <footer class="main-footer">
+        <small class="main-footer__copyright">
+            2018 - Todos os direitos reservados
+        </small>
+    </footer>
+</div><script src="js/150-DOM.js"></script>
+<script>
+
+</script>
+</body>
+</html>
+```
+
+```js
+/* 150 - DOM */
+
+// .parentNode
+
+(function () {
+    'use strict';
+
+    var $main = document.querySelector('.main');
+    console.log($main.parentNode); // .parentNode
+    console.log($main.childNodes); // .childNodes // NodeList(7) [text, header.main-header, text, section.main-content, text, footer.main-footer, text]
+
+    console.log($main.firstChild); // .firsChild // #text (quebra ou espaçamento)
+    console.log($main.lastChild); // .lastChild // #text (quebra ou espaçamento)
+
+    console.log($main.nextSibling); // .nextSibling // <script src="js/150-DOM.js"></script> (sem espaço)
+    console.log($main.previousSibling); // .previousSibling // #text (sem os espaço, retorna null, não tem irmão)
+
+})();
+
+```
+
+
+### 150 - DOM
+
+
 
 ---
 ### documentFragments
