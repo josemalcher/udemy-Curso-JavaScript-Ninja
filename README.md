@@ -3057,15 +3057,16 @@ function boom(event) {
 ```
 
 ---
-### Eventos para carregamento da tela
+### 164 - Introdução ao Ajax
 
-
-
----
-### Copiar arrays
-
----
-### Pegar tipo correto de objetos
+```js
+(function () {
+    'use strict';
+    var ajax = new XMLHttpRequest();
+    ajax.open('GET', 'js/164-Introducao-Ajax.js');
+    ajax.send();
+})();
+```
 
 ---
 ### Ajax - método GET
