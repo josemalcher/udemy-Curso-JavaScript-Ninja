@@ -6,16 +6,25 @@
     ajax.send();
 
     console.log('carregando...');
+
+    var response = '';
+
     ajax.addEventListener('readystatechange', function () {
-        if (isRquestOK()) {
-            var data = JSON.parse(ajax.responseText);
-            console.log('Requisição OK', data.message);
-        } /*else {
-            console.log('Deu problema ou ainda carregando....');
-        }*/
+        if (isRequestOK()) {
+            //console.log('Requisição OK | ', JSON.parse(ajax.responseText).message);
+            try{
+                response = JSON.parse(ajax.responseText);
+                //throw  new Error("Mensagem de erro!!");
+            }catch (e) {
+                //console.log(e);
+                response = ajax.responseText;
+            }
+            console.log(response); // {message: "OK jSon | Requisição realizada com sucesso!"}
+        }
+
     }, false);
 
-    function isRquestOK() {
+    function isRequestOK() {
         return ajax.readyState === 4 && ajax.status === 200;
     }
 })();
