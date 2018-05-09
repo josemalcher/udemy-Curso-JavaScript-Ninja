@@ -3272,36 +3272,29 @@ function boom(event) {
     <div class="main" data-js="main"></div>
 </form>
 ```
-
-
 ---
-### Objeto Date
 
----
-### Objeto Math
+### 182 - DOM - insertAdjacentHTML
+```js
+(function () {
+    'use strict';
 
----
-### Ajax - outros verbos
+    var $form = document.querySelector('[data-js="form"]');
+    //$form.insertAdjacentHTML('beforebegin', '<h1>Meu Forumulário!</h1>');
+    //$form.insertAdjacentHTML('afterbegin', '<h1>Meu Forumulário!</h1>');
+    $form.insertAdjacentHTML('beforeend', '<h1>Meu Forumulário!</h1>');
+    console.log($form); // retorna propriedades do elemento!
 
----
-### Backend para mostrar como ele recebe os dados do client
+})();
+```
 
----
-### Enviar dados via Ajax
+```html
+<form action="/" method="get" data-js="form">
+    <textarea data-js="textarea" rows="20" cols="50"> </textarea>
+    <button type="submit" data-js="button">Enviar</button>
+</form>
+<div class="main" data-js="main"></div>
+```
 
----
-### Enviar cabeçalhos via Ajax
-
----
-### Abortar requisição Ajax
-
----
-### Testes (TDD, BDD)
-
----
-### Ferramentas para escrever testes
-
----
-### Aula bônus
 
 ---
