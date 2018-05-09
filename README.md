@@ -3247,6 +3247,32 @@ function boom(event) {
 
 })();
 ```
+---
+### 181 - DOM - innerHTML - Problemas de segurança
+```js
+(function () {
+    'use strict';
+
+    var $div =      document.querySelector('[data-js="main"]');
+    var $textarea = document.querySelector('[data-js="textarea"]');
+    var $form =     document.querySelector('[data-js="form"]');
+
+    $form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        $div.innerHTML = $textarea.value; /* é bom tratar as entradas dos usuários*/
+    }, false);
+
+})();
+```
+
+```html
+<form action="/" method="get" data-js="form">
+    <textarea data-js="textarea" rows="20" cols="50"> </textarea>
+    <button type="submit" data-js="button">Enviar</button>
+    <div class="main" data-js="main"></div>
+</form>
+```
+
 
 ---
 ### Objeto Date
