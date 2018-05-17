@@ -3385,7 +3385,8 @@ function boom(event) {
 --- 
 
 ### 186 - Ajax 
-
+### 
+- Rodar nodemon no windows: https://pt.stackoverflow.com/questions/204249/como-instalar-o-nodemon-globalmente
 ```js
 
 ```                                              
