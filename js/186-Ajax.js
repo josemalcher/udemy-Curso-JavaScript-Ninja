@@ -18,7 +18,11 @@
         }
     }, false);*/
     ajax.onreadystatechange = function (e) {
-        if (ajax.readyState === 4) {
+        if (ajax.readyState === 2) {
+            console.log('Headers OK!');
+            ajax.abort(); // finaliza a requisição
+        }
+        if(ajax.readyState === 4){
             console.log(ajax.responseText, ajax.status);
         }
     };
