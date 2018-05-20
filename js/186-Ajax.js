@@ -31,7 +31,8 @@
     var ajax = new XMLHttpRequest();
     ajax.open('POST','http://localhost:3000/user');
     ajax.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-    ajax.send('username=Mario&age=40');
+    //ajax.send('user=Mario&username=MarioRoberto&age=40');
+    ajax.send('user=fernando&username=FernandoMoraeso&age=60');
 
     console.log('Cadastrando usuário');
 
@@ -42,14 +43,17 @@
     };
 
     var get = new XMLHttpRequest();
-    get.open('GET', 'http://localhost:3000/user/josemalcher');
+    get.open('GET', 'http://localhost:3000/user/FernandoMoraeso');
     get.send();
 
     get.onreadystatechange = function () {
         if(get.readyState === 4){
-            console.log(get.responseText);
+            //console.log(get.responseText);
+            console.log(JSON.parse(get.responseText));
         }
     }
+
+
 
 
 

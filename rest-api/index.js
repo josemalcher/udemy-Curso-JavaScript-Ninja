@@ -40,7 +40,7 @@ app.get('/user/:username', function (req, res) {
     var hasUser = users.some(function (user) {
         return user.username === username;
     });
-    if(hasUser){
+    if (hasUser) {
         return res.json(users.filter(function (user) {
             return user.username === username;
         })[0]); //retorna somente o objeto e não o array
@@ -53,7 +53,20 @@ app.get('/user/:username', function (req, res) {
 app.post('/user', function (req, res) {
     var username = req.body.username;
     var age = req.body.age;
-    res.json({username: username, age: age});
+    var user = req.body.user;
+
+    //veririficação
+    var hasUser = users.some(function (user) {
+        return user.username === username;
+    });
+    if (!hasUser) {
+        users.push({
+            username: username,
+            age: age,
+            user: user
+        });
+    }
+    res.json(users);
 });
 
 app.listen(3000);
