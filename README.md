@@ -109,7 +109,7 @@ console.log(soma3); // 30
 soma3 -= 5;
 console.log(soma3); // 25
 
-``` 
+```
 
 ---
 ### 03 - Operadores de igualdade e relacionais
